@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Motion Lab 动效实验台</title>
+<meta name="description" content="从 327 个网页动效里筛出能上线的 12 个，可调强度、一键复制代码。">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<header id="hdr">
+  <div class="bar">
+    <a class="logo" href="#top"><span class="dot"></span>MOTION&nbsp;LAB</a>
+    <nav>
+      <a href="#sec-btn">按钮</a>
+      <a href="#sec-card">卡片</a>
+      <a href="#sec-scroll">滚动</a>
+      <a href="#sec-micro">微交互</a>
+      <a href="#sec-tune">调参</a>
+    </nav>
+    <span class="cnt" id="cnt">12 / 327</span>
+  </div>
+  <div class="prog"><i id="prog"></i></div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <p class="kick">动效实验台 · 2026</p>
+    <h1 class="split" data-split>把 327 个动效|拧成 12 个能上线的</h1>
+    <p class="sub">那些看起来很花的网页动画，绝大多数不是视频，是 CSS 和几行 JS。<br>
+      这一页本身就是样品：下面每个效果都能调强度、看参数、把它整块抄走。</p>
+
+    <div class="hero-btns">
+      <button class="btn-roll" data-demo="roll">
+        <span class="roll"><span class="r-in">看看能用的有哪几个</span><span class="r-in" aria-hidden="true">看看能用的有哪几个</span></span>
+        <span class="arw" aria-hidden="true">→</span>
+      </button>
+      <button class="btn-mag" data-demo="magnetic"><span>磁吸按钮</span></button>
+      <button class="btn-shine" data-demo="shine"><span>扫光按钮</span></button>
+    </div>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="mq-track">
+        <span>micro-interaction</span><b>✦</b><span>scroll reveal</span><b>✦</b><span>clip-path</span><b>✦</b>
+        <span>magnetic</span><b>✦</b><span>stagger</span><b>✦</b><span>count-up</span><b>✦</b>
+        <span>micro-interaction</span><b>✦</b><span>scroll reveal</span><b>✦</b><span>clip-path</span><b>✦</b>
+        <span>magnetic</span><b>✦</b><span>stagger</span><b>✦</b><span>count-up</span><b>✦</b>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 01 按钮 ============ -->
+  <section id="sec-btn" class="sec">
+    <div class="sec-hd">
+      <span class="num">01</span>
+      <h2>按钮：三种手感，都只有几十行</h2>
+      <p class="note">原理是「文字复制一层往上滚」「跟随指针 + 弹性回位」「渐层扫过」。全部原生 CSS/JS，不加任何库。</p>
+    </div>
+
+    <div class="grid3">
+      <article class="demo" data-demo="roll">
+        <div class="stage">
+          <button class="btn-roll"><span class="roll"><span class="r-in">立即开始</span><span class="r-in" aria-hidden="true">立即开始</span></span><span class="arw">→</span></button>
+        </div>
+        <div class="meta"><h3>Rolling Text</h3><p>悬停时文字逐行上翻，箭头转向</p></div>
+        <button class="copy" data-copy="roll">复制代码</button>
+      </article>
+
+      <article class="demo" data-demo="magnetic">
+        <div class="stage">
+          <button class="btn-mag"><span>吸过来</span></button>
+        </div>
+        <div class="meta"><h3>Magnetic Button</h3><p>指针靠近时按钮被吸走一点，离开弹回</p></div>
+        <button class="copy" data-copy="magnetic">复制代码</button>
+      </article>
+
+      <article class="demo" data-demo="shine">
+        <div class="stage">
+          <button class="btn-shine"><span>领取实验包</span></button>
+        </div>
+        <div class="meta"><h3>Shine Sweep</h3><p>一道斜光定时扫过，悬停加快</p></div>
+        <button class="copy" data-copy="shine">复制代码</button>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 02 卡片 ============ -->
+  <section id="sec-card" class="sec">
+    <div class="sec-hd">
+      <span class="num">02</span>
+      <h2>卡片：让人愿意把指针停下来的三个理由</h2>
+      <p class="note">浮起靠的是 translateY + 阴影过渡；聚光靠指针坐标写进 CSS 变量；揭开靠 clip-path 从 0 到 100%。</p>
+    </div>
+
+    <div class="grid3">
+      <article class="demo" data-demo="lift">
+        <div class="stage">
+          <div class="card-lift">
+            <div class="thumb art-a"></div>
+            <h4>Hover Lift</h4>
+            <p>上浮 6px、阴影加深、缩图在框内放大</p>
+          </div>
+        </div>
+        <div class="meta"><h3>Hover Lift Card</h3><p>最稳的一种，永远不会翻车</p></div>
+        <button class="copy" data-copy="lift">复制代码</button>
+      </article>
+
+      <article class="demo" data-demo="spotlight">
+        <div class="stage">
+          <div class="card-spot">
+            <h4>Spotlight</h4>
+            <p>指针经过时，边框和内部被一束光照亮</p>
+          </div>
+        </div>
+        <div class="meta"><h3>Spotlight Card</h3><p>用 --mx / --my 驱动 radial-gradient</p></div>
+        <button class="copy" data-copy="spotlight">复制代码</button>
+      </article>
+
+      <article class="demo" data-demo="clip">
+        <div class="stage">
+          <div class="card-clip">
+            <div class="thumb art-b"></div>
+            <span class="clip-label">CLIP REVEAL</span>
+          </div>
+        </div>
+        <div class="meta"><h3>Image Clip Reveal</h3><p>滚动到视口时从下往上揭开</p></div>
+        <button class="copy" data-copy="clip">复制代码</button>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 03 滚动 ============ -->
+  <section id="sec-scroll" class="sec">
+    <div class="sec-hd">
+      <span class="num">03</span>
+      <h2>滚动：动效真正的高发区</h2>
+      <p class="note">IntersectionObserver 只做一件事——决定「什么时候开始」。触发一次就解绑，比监听 scroll 便宜得多。</p>
+    </div>
+
+    <div class="stats">
+      <div class="stat reveal"><b data-count="327">0</b><span>个动效来源</span></div>
+      <div class="stat reveal"><b data-count="12">0</b><span>个能上生产</span></div>
+      <div class="stat reveal"><b data-count="0">0</b><span>行第三方依赖</span></div>
+      <div class="stat reveal"><b data-count="60">0</b><span>帧率目标 · 只动 transform / opacity</span></div>
+    </div>
+
+    <ul class="rows">
+      <li class="reveal"><span>01</span><b>进场只做一次</b><p>动画结束后 unobserve，回到视口不重播</p></li>
+      <li class="reveal"><span>02</span><b>只动合成层</b><p>transform / opacity / clip-path，不碰 width、top</p></li>
+      <li class="reveal"><span>03</span><b>错开 60–90ms</b><p>同组元素依次入场，比一起出现有节奏</p></li>
+      <li class="reveal"><span>04</span><b>认 prefers-reduced-motion</b><p>系统开了「减少动态效果」就整页关掉</p></li>
+    </ul>
+  </section>
+
+  <!-- ============ 04 微交互 ============ -->
+  <section id="sec-micro" class="sec">
+    <div class="sec-hd">
+      <span class="num">04</span>
+      <h2>微交互：真正让页面显得「被做过」</h2>
+      <p class="note">这些不需要滚动、不需要库，但用户每一次点都会碰到。</p>
+    </div>
+
+    <div class="grid3">
+      <article class="demo" data-demo="toggle">
+        <div class="stage">
+          <button class="toggle" role="switch" aria-checked="false" aria-label="开关演示"><i></i></button>
+          <span class="tg-state">关</span>
+        </div>
+        <div class="meta"><h3>Toggle</h3><p>圆钮滑过去时略微拉长</p></div>
+        <button class="copy" data-copy="toggle">复制代码</button>
+      </article>
+
+      <article class="demo" data-demo="float">
+        <div class="stage">
+          <label class="field">
+            <input type="text" placeholder=" " id="f1" autocomplete="off">
+            <span>邮箱 / Email</span>
+          </label>
+        </div>
+        <div class="meta"><h3>Floating Label</h3><p>聚焦时标签缩小上浮，底线从中间展开</p></div>
+        <button class="copy" data-copy="float">复制代码</button>
+      </article>
+
+      <article class="demo" data-demo="seg">
+        <div class="stage">
+          <div class="seg" role="tablist">
+            <i class="seg-pill"></i>
+            <button role="tab" aria-selected="true">强度低</button>
+            <button role="tab">中</button>
+            <button role="tab">高</button>
+          </div>
+        </div>
+        <div class="meta"><h3>Segmented</h3><p>滑块带弹性滑到新位置、宽度跟着变</p></div>
+        <button class="copy" data-copy="seg">复制代码</button>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 05 调参 ============ -->
+  <section id="sec-tune" class="sec">
+    <div class="sec-hd">
+      <span class="num">05</span>
+      <h2>三个旋钮：动效强度 / 信息密度 / 圆角</h2>
+      <p class="note">全部写到 :root 的 CSS 变量上，全站动画时长用 calc(… * var(--mo)) 计算。改一个数，整页手感就变了——这也是「设计系统」最实用的一部分。</p>
+    </div>
+
+    <div class="tuner">
+      <label class="trow"><span>动效强度</span><input type="range" id="t-mo" min="0" max="2" step="0.25" value="1"><output id="o-mo">1.0×</output></label>
+      <label class="trow"><span>信息密度</span><input type="range" id="t-dens" min="0.8" max="1.4" step="0.1" value="1"><output id="o-dens">1.0×</output></label>
+      <label class="trow"><span>圆角</span><input type="range" id="t-rad" min="0" max="28" step="2" value="18"><output id="o-rad">18px</output></label>
+      <div class="trow-out"><button class="btn-shine" id="t-reset"><span>还原默认</span></button><code id="t-code">--mo:1; --dens:1; --radius:18px;</code></div>
+    </div>
+  </section>
+
+  <footer>
+    <p class="f1">来源与判断</p>
+    <ul class="src">
+      <li><b>kittenjam Motion Library</b> · 327 个动效的静态目录（GSAP / CSS / Canvas 真实实现），最大价值是「按场景挑」和「看提示词怎么描述动作」。站点自述仅供个人参考学习，代码要抄就自己重写。</li>
+      <li><b>Remotion</b> · 用 React 生成视频，产出是 mp4/gif。放进网页只能当播放器素材，不能当交互动效。</li>
+      <li><b>Taste Skill</b> · 装成我的技能，作用是建站时给我设计规范（排版、动效、密度），不是运行时库。</li>
+    </ul>
+    <p class="f2">本页无第三方依赖，纯 HTML / CSS / JS。</p>
+  </footer>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite">已复制</div>
+<script src="assets/snippets.js"></script>
+<script src="assets/motion.js"></script>
+</body>
+</html>
