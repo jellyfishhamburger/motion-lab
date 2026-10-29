@@ -1,5 +1,14 @@
 # Motion Lab 动效实验台
 
+**线上：** https://jellyfishhamburger.github.io/motion-lab/
+**仓库：** https://github.com/jellyfishhamburger/motion-lab （分支 `main`，GitHub Pages 从根目录发布）
+
+改完推一下线上就更新：
+
+```bash
+git add -A && git commit -m "改了什么" && git push
+```
+
 从 327 个网页动效里筛出 12 个能上生产的，做成一个可调强度、可一键复制代码的页面。
 **零依赖**：纯 HTML / CSS / JS，没有 GSAP、没有 npm、没有构建步骤。双击 `index.html` 就能跑。
 
